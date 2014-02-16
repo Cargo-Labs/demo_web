@@ -28,7 +28,8 @@ var map
               //Pop modal window.
               $('#myModal').modal({
                 keyboard: true,
-                show: true
+                show: true,
+                backdrop: false
               })
             });
             
