@@ -1,5 +1,6 @@
 var map
     var speedometer;
+    var tachometer;
     
     function getPoints(file, result) {
       $.get(file, function(data) {
@@ -61,4 +62,6 @@ var map
     function initSpeedometer() {
       speedometer = new Speedometer ('speedometer', {theme: 'default'});
       speedometer.draw ();
+      tachometer = new Speedometer ('tachometer', {theme: 'default-red'});
+      tachometer.draw();
     }
