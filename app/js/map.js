@@ -40,7 +40,7 @@
     function initialize() {
       var mapOptions = {
         center: new google.maps.LatLng(45.52, -122.6819),
-        zoom: 12
+        zoom: 14
       };
       map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     }
