@@ -1,3 +1,13 @@
+  var speedometer;
+    $( document ).ready(function() {
+      speedometer = new Speedometer ('speedometer', {theme: 'default'});
+      speedometer.draw ();
+      speedometer.addEventListener ('speedometer:animateend', function () {
+        controls.start ();
+      });
+    });
+
+
   function getPoints(file, result) {
       $.get(file, function(data) {
         var points = data.split(';');
@@ -13,7 +23,7 @@
           latlng = new google.maps.LatLng(arr[0], arr[1])
           speed = arr[2];
           //Set speed
-          speedometer.animatedUpdate (target, 5000);
+          speedometer.animatedUpdate (50, 5000);
 
           if (count == 0) {
             marker = new google.maps.Marker({
