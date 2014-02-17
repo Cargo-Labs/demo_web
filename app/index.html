@@ -22,9 +22,6 @@
     $( document ).ready(function() {
       speedometer = new Speedometer ('speedometer', {theme: 'default'});
       speedometer.draw ();
-      speedometer.addEventListener ('speedometer:animateend', function () {
-        controls.start ();
-      });
     });
 
   </script>
