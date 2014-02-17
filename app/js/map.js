@@ -13,7 +13,7 @@
           latlng = new google.maps.LatLng(arr[0], arr[1])
           speed = arr[2];
           //Set speed
-          speedometer.animatedUpdate (speed, 5000);
+          //speedometer.animatedUpdate (speed, 5000);
 
           if (count == 0) {
             marker = new google.maps.Marker({
