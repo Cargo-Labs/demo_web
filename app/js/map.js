@@ -1,14 +1,4 @@
-  var speedometer;
-    $( document ).ready(function() {
-      speedometer = new Speedometer ('speedometer', {theme: 'default'});
-      speedometer.draw ();
-      speedometer.addEventListener ('speedometer:animateend', function () {
-        controls.start ();
-      });
-    });
-
-
-  function getPoints(file, result) {
+    function getPoints(file, result) {
       $.get(file, function(data) {
         var points = data.split(';');
         result(points)
