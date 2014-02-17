@@ -11,6 +11,10 @@
         for (key in points) {
           arr = $.trim(points[key]).split(','); 
           latlng = new google.maps.LatLng(arr[0], arr[1])
+          speed = arr[2];
+          //Set speed
+          speedometer.animatedUpdate (target, 5000);
+
           if (count == 0) {
             marker = new google.maps.Marker({
                 position: latlng,
