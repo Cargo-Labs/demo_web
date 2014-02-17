@@ -53,13 +53,13 @@
             });
             
             //Set speed
-            speedometer.animatedUpdate(speed, 500);
+            speedometer.update(speed);
           } else {
             setTimeout(function(marker, latlng, speed) {
               marker.setPosition(latlng)
               //Set speed
-              speedometer.animatedUpdate(speed, 500);
-            }, 3000 * count, marker, latlng)
+              speedometer.update(speed);
+            }, 3000 * count, marker, latlng, speed)
           }
           count++;
         }
