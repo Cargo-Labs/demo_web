@@ -17,12 +17,7 @@
   <script src="lib/bootstrap.min.js"></script>
 
   <script type="text/javascript">
-    var speedometer;
-
-    $( document ).ready(function() {
-      speedometer = new Speedometer ('speedometer', {theme: 'default'});
-      speedometer.draw ();
-    });
+   
 
   </script>
 
@@ -71,12 +66,16 @@
     }
   
     var map
+    var speedometer;
     function initialize() {
       var mapOptions = {
         center: new google.maps.LatLng(45.52, -122.6819),
         zoom: 14
       };
       map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+      speedometer = new Speedometer ('speedometer', {theme: 'default'});
+      speedometer.draw ();
     }
     google.maps.event.addDomListener(window, 'load', initialize);
   </script>
