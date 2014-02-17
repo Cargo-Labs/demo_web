@@ -16,11 +16,6 @@
   <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDfp_hp8bSjJv8zCJ5ifsDOv9ClhjdZVk8&sensor=false"></script>
   <script src="lib/bootstrap.min.js"></script>
 
-  <script type="text/javascript">
-   
-
-  </script>
-
   <!--<script src="js/map.js"></script>-->
   <script type="text/javascript">
     function getPoints(file, result) {
@@ -38,7 +33,7 @@
           latlng = new google.maps.LatLng(arr[0], arr[1])
           speed = arr[2];
           //Set speed
-          speedometer.animatedUpdate (speed, 1000);
+          //speedometer.animatedUpdate (speed, 1000);
 
           if (count == 0) {
             marker = new google.maps.Marker({
