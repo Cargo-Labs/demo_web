@@ -1,3 +1,6 @@
+var map
+    var speedometer;
+    
     function getPoints(file, result) {
       $.get(file, function(data) {
         var points = data.split(';');
@@ -12,8 +15,6 @@
           arr = $.trim(points[key]).split(','); 
           latlng = new google.maps.LatLng(arr[0], arr[1])
           speed = arr[2];
-          //Set speed
-          speedometer.animatedUpdate (speed, 1000);
 
           if (count == 0) {
             marker = new google.maps.Marker({
@@ -30,22 +31,33 @@
                 show: true
               })
             });
+            
+            //Set speed
+            speedometer.update(speed);
           } else {
-            setTimeout(function(marker, latlng) {
+            setTimeout(function(marker, latlng, speed) {
               marker.setPosition(latlng)
-            }, 3000 * count, marker, latlng)
+              //Set speed
+              speedometer.update(speed);
+            }, 2000 * count, marker, latlng, speed)
           }
           count++;
         }
       });
     }
-  
-    var map
+
     function initialize() {
       var mapOptions = {
         center: new google.maps.LatLng(45.52, -122.6819),
         zoom: 14
       };
       map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+      initSpeedometer();
     }
     google.maps.event.addDomListener(window, 'load', initialize);
+
+    function initSpeedometer() {
+      speedometer = new Speedometer ('speedometer', {theme: 'default'});
+      speedometer.draw ();
+    }
