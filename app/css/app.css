@@ -33,7 +33,17 @@ body { height: 100%; margin: 0; padding: 0 }
   padding: 0;
 }
 
-#map-canvas { height: 100%; }
+#map-canvas {
+  height: 100%;
+}
+
+#map-container {
+  height: 80%;
+}
+
+#dashboard {
+  background-color: red;
+}
 
 #myModal {
   width: 630px;
