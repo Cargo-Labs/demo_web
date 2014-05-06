@@ -54,9 +54,10 @@ body { height: 100%; margin: 0; padding: 0 }
   padding: 10px;
   margin: 10px;
   border: 1px solid #AAA;
+  font-size: 12px;
 }
 
 #details_label {
   font-weight: bold;
-  width: 150px;
+  width: 130px;
 }
