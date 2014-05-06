@@ -21,6 +21,14 @@ var map
           arr = $.trim(points[key]).split(','); 
           latlng = new google.maps.LatLng(arr[0], arr[1])
           speed = arr[2];
+          //rpm
+          rpm = arr[3];
+
+          //temp
+          temp = arr[4];
+          
+          //mpg
+          mpg = arr[5];
 
           if (count == 0) {
             marker = new google.maps.Marker({
@@ -42,11 +50,21 @@ var map
             //Set speed
             speedometer.update(speed);
           } else {
-            setTimeout(function(marker, latlng, speed) {
+            setTimeout(function(marker, latlng, speed, rpm, temp, mpg) {
               marker.setPosition(latlng)
               //Set speed
               speedometer.update(speed);
-            }, 2000 * count, marker, latlng, speed)
+              
+              $('#rpm').html(rpm);
+              $('#temp').html(temp);
+              $('#mpg').html(mpg);
+              /*
+              document.getElementById('rpm').firstChild.data = rpm;
+              document.getElementById('temp').firstChild.data = temp;
+              document.getElementById('mpg').firstChild.data = mpg;
+              */
+
+            }, 2000 * count, marker, latlng, speed, rpm, temp, mpg)
           }
           count++;
         }
