@@ -1,1 +1,1 @@
-Cargo Demo Site. (antiquated)
+# Cargo Demo
